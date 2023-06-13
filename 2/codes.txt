@@ -1,0 +1,102 @@
+Task 1
+
+#include <stdio.h>
+
+// Define the struct for Paratha item
+struct Paratha {
+    int quantity;
+    float unit_price;
+};
+
+// Define the struct for Vegetable item
+struct Vegetable {
+    int quantity;
+    float unit_price;
+};
+
+// Define the struct for Mineral Water item
+struct MineralWater {
+    int quantity;
+    float unit_price;
+};
+
+int main() {
+    // Declare variables for each item and the number of people
+    struct Paratha paratha;
+    struct Vegetable vegetable;
+    struct MineralWater mineral_water;
+    int num_people;
+
+    // Get input for the paratha item
+    printf("Quantity Of Paratha: ");
+    scanf("%d", &paratha.quantity);
+    printf("Unit Price: ");
+    scanf("%f", &paratha.unit_price);
+
+    // Get input for the vegetable item
+    printf("Quantity Of Vegetable: ");
+    scanf("%d", &vegetable.quantity);
+    printf("Unit Price: ");
+    scanf("%f", &vegetable.unit_price);
+
+    // Get input for the mineral water item
+    printf("Quantity Of Mineral Water: ");
+    scanf("%d", &mineral_water.quantity);
+    printf("Unit Price: ");
+    scanf("%f", &mineral_water.unit_price);
+
+    // Calculate the total bill
+    float total_bill = (paratha.quantity * paratha.unit_price) + (vegetable.quantity * vegetable.unit_price) + (mineral_water.quantity * mineral_water.unit_price);
+
+    // Get input for the number of people
+    printf("Number of People: ");
+    scanf("%d", &num_people);
+
+    // Calculate the amount each person should pay
+    float per_person_bill = total_bill / num_people;
+
+    // Print the result
+    printf("Individual people will pay: %.2f tk\n", per_person_bill);
+
+    return 0;
+}
+
+Task 2
+
+#include <stdio.h>
+
+// Function to check if a number is perfect or not
+int isPerfect(int num) {
+    int sum = 0;
+
+    // Find the divisors of the number and add them to sum
+    for (int i = 1; i <= num / 2; i++) {
+        if (num % i == 0) {
+            sum += i;
+        }
+    }
+
+    // If sum is equal to the number, it is perfect
+    if (sum == num) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+int main() {
+    int start, end;
+
+    // Get input for the interval
+    printf("Enter the start and end of the interval: ");
+    scanf("%d %d", &start, &end);
+
+    // Iterate through the numbers in the interval and check if they are perfect
+    for (int i = start; i <= end; i++) {
+        if (isPerfect(i)) {
+            printf("%d\n", i);
+        }
+    }
+
+    return 0;
+}

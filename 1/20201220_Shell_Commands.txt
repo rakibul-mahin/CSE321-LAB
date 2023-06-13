@@ -1,0 +1,60 @@
+1. (a)
+touch 20201220_1.txt 20201220_2.txt 20201220_3.txt 20201220_4.txt
+mkdir Rakibul1
+mkdir Rakibul2
+mv 20201220_1.txt Rakibul1 
+mv 20201220_2.txt Rakibul1 
+mv 20201220_3.txt Rakibul1
+cp ./Rakibul1/20201220_1.txt ./Rakibul2 
+cp ./Rakibul1/20201220_2.txt ./Rakibul2
+cd Rakibul2
+mkdir Rakibul3
+cp -r ../Rakibul1 ./Rakibul3
+cd Rakibul3
+cd Rakibul1
+ls -l
+chmod go=rx 20201220_1.txt 20201220_2.txt 20201220_3.txt
+ls -l
+cd ..
+ls -l
+chmod go=rx Rakibul1
+ls -l
+cd ..
+ls
+mv ./Rakibul3 ../root
+rm -r 20201220_1.txt 20201220_2.txt
+1. (b)
+cat> course.txt
+HUM101 - World Civilization and Culture - 08
+CSE321 - Operating Systems - 04
+CSE438 - Applied Data Science for Practitioners - 01
+CSE470 - Software Engineering - 01
+
+grep -c CSE course.txt
+1. (c)
+cd /
+ls -a
+1. (d)
+cat> a.txt  
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+
+sed -n '5,17p' a.txt
